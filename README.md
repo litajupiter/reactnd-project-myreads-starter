@@ -1,3 +1,6 @@
+# Introduction
+This version of the MyReads project is by Brianne Williams for the Front-End Web Developer (FEND) Nanodegree Program. References: Udacity React Course Materials, Study Jam 21/07-FEND P7-My Reads by Maeva NAP, reactjs.org.
+
 # MyReads Project
 
 This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
