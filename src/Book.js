@@ -5,17 +5,13 @@ class Book extends Component {
     let displayedThumbnail = this.props.book.imageLinks ?
     this.props.book.imageLinks.thumbnail : '';
 
-
-
     return (
       <div className="book">
         <div className="book-top">
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${displayedThumbnail}")` }}></div>
           <div className="book-shelf-changer">
             <select
-              onChange={(event) => this.props.updateShelf(
-                this.props.book, event.target.value
-              )}
+              onChange={(event) => this.props.updateShelf(this.props.book, event.target.value)}
               value={this.props.currentShelf}
             >
               <option value="move" disabled>Move to...</option>
@@ -33,4 +29,4 @@ class Book extends Component {
   }
 }
 
-export default Book;
+export default Book

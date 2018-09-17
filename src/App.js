@@ -16,7 +16,6 @@ class BooksApp extends Component {
     })
   }
 
-  //get all books before loading the component
   componentDidMount() {
     this.getAll();
   }
@@ -37,8 +36,8 @@ class BooksApp extends Component {
         )}/>
         <Route path="/search" render={() => (
             <SearchPage
-              updateShelf={this.updateShelf}
               books={this.state.books}
+              updateShelf={this.updateShelf}
             />
         )}/>
       </div>
