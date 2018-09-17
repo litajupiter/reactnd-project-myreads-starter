@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import MainPage from './MainPage'
 import SearchPage from './SearchPage'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 
-class BooksApp extends React.Component {
+class BooksApp extends Component {
   state = {
     books: []
   }
 
-  componentDidMount() {
+  getAll = () => {
     BooksAPI.getAll().then((books) => {
-      this.setState({ books: books })
+      this.setState({ books })
     })
   }
 
-  moveShelf = (book, shelf) => {
+  //get all books before loading the component
+  componentDidMount() {
+    this.getAll();
+  }
+
+  updateShelf = (book, shelf) => {
     BooksAPI.update(book, shelf);
-//write the getAll separately and call in componentDidMount and moveShelf
-    BooksAPI.getAll().then((books) => {
-      this.setState({ books: books })
-    })
+    this.getAll();
   }
 
   render() {
@@ -30,15 +32,15 @@ class BooksApp extends React.Component {
         <Route exact path="/" render={() => (
             <MainPage
               books={this.state.books}
-              moveShelf={this.moveShelf}
+              updateShelf={this.updateShelf}
             />
-        )} />
+        )}/>
         <Route path="/search" render={() => (
             <SearchPage
-              moveShelf={this.moveShelf}
+              updateShelf={this.updateShelf}
               books={this.state.books}
             />
-        )} />
+        )}/>
       </div>
     )
   }

@@ -1,5 +1,5 @@
 # Introduction
-This version of the MyReads project is by Brianne Williams for the Front-End Web Developer (FEND) Nanodegree Program. References: Udacity React Course Materials, Study Jam 21/07-FEND P7-My Reads by Maeva NAP, reactjs.org.
+This version of the MyReads project is by Brianne Williams for the Front-End Web Developer (FEND) Nanodegree Program. References: Udacity React Course Materials, Study Jam 21/07-FEND P7-My Reads by Maeva NAP, reactjs.org, the Udacity Front-End Web Developer Nanodegree Support Group, Stack Overflow.
 
 # MyReads Project
 
