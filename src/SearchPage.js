@@ -19,7 +19,7 @@ class SearchPage extends Component {
       const match = new RegExp(escapeRegExp(this.state.query), 'i')
       showingBooks = this.props.books.filter((book) => match.test(book.title))
     } else {
-      showingBooks = this.props.books;
+      showingBooks = [];
     }
 
     showingBooks.sort(sortBy('title'))
