@@ -16,8 +16,7 @@ class MainPage extends Component {
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {
-                    this.props.books
-                    .filter(book => book.shelf === 'currentlyReading')
+                    this.props.books.filter(book => book.shelf === 'currentlyReading')
                     .map(book => (
                       <li key={book.id}>
                         <Book
@@ -36,8 +35,7 @@ class MainPage extends Component {
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {
-                    this.props.books
-                    .filter(book => book.shelf === 'wantToRead')
+                    this.props.books.filter(book => book.shelf === 'wantToRead')
                     .map(book => (
                       <li key={book.id}>
                         <Book
@@ -56,8 +54,7 @@ class MainPage extends Component {
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {
-                    this.props.books
-                    .filter(book => book.shelf === 'read')
+                    this.props.books.filter(book => book.shelf === 'read')
                     .map(book => (
                       <li key={book.id}>
                         <Book
