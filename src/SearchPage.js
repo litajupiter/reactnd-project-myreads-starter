@@ -17,7 +17,7 @@ class SearchPage extends Component {
     let showingBooks
     if (this.state.query) {
       const match = new RegExp(escapeRegExp(this.state.query), 'i')
-      showingBooks = this.props.books.filter((book) => match.test(book.title))
+      showingBooks = this.props.books.filter((book) => match.test(book.title || book.authors))
     } else {
       showingBooks = [];
     }
@@ -42,14 +42,25 @@ class SearchPage extends Component {
           </div>
           <div className="search-books-results">
             <ol className="books-grid">
-              {showingBooks.map((showingBook) => (
-                <li key={showingBook.id}>
-                  <Book
-                    book={showingBook}
-                    updateShelf={this.props.updateShelf}
-                  />
-                </li>
-              ))}
+              {
+                showingBooks.map(showingBook => {
+                  let shelf = "none";
+                  this.props.books.map(book => (
+                    book.id === showingBook.id ?
+                    shelf = book.shelf : ''
+                  ));
+
+                  return(
+                    <li key={showingBook.id}>
+                    <Book
+                      book={showingBook}
+                      updateShelf={this.props.updateShelf}
+                      currentShelf={shelf}
+                    />
+                  </li>
+                  );
+                })
+               }
             </ol>
           </div>
         </div>
