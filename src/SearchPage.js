@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Book from './Book'
+import * as BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
@@ -10,6 +11,7 @@ class SearchPage extends Component {
   }
 
   updateQuery = (query) => {
+    BooksAPI.search(query);
     this.setState({ query })
   }
 
